@@ -1,0 +1,61 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname Lab1Exercises) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;10/19/17
+;Fundies 1
+;Lab 1
+;I'm skipping the first four exercises because they are in-class specific
+
+
+
+;Exercise 5
+
+(define (letter-grade g)
+  (cond
+    [(number? g) 
+      (cond
+        [(and (<= g 100) (>= g 90)) "A"]
+        [(and (< g 90) (>= g 80)) "B"]
+        [(and (< g 80) (>= g 70)) "C"]
+        [(and (< g 70) (>= g 60)) "D"]
+        [(and (< g 60) (>= g 0)) "F"]
+        [else "Error"]
+        )]
+    [else "Error"]
+    )
+  )
+
+
+;Exercise 6
+
+(define (how-long t)
+  (cond
+    [(number? t) (cond
+                   [(and (<= t 10) (>= t 0)) "great!"]
+                   [(and (<= t 60) (> t 10)) "okay"]
+                   [(> t 60) "not good"]
+                   [else "Invalid time"]
+                     )]
+    [else "Error"]
+    )
+  )
+
+
+;Exercise 7
+
+(define (good-weather w)
+  (cond
+    [(string? w)
+      (cond 
+       [(string=? w "sunny") #t]
+       [(string=? w "rainy") #t]
+       [(string=? w "snowy") #f]
+       [(string=? w "windy") #f]
+       [else "I don't know that kind of weather"]
+       )]
+    [else "Error"]
+    )
+  )
+
+
+;Exercise 8
